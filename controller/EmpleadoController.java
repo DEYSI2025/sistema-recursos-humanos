@@ -16,4 +16,9 @@ public class EmpleadoController {
     public Empleado crear(@RequestBody Empleado empleado) {
         return empleadoService.guardar(empleado);
     }
+
+    @GetMapping
+    public java.util.List<Empleado> listar() {
+        return empleadoService.listar();
+    }
 }

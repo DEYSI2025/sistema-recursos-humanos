@@ -26,4 +26,10 @@ public class EmpleadoController {
     public void eliminar(@PathVariable Long id) {
         empleadoService.eliminar(id);
     }
+
+    @PutMapping("/{id}")
+    public Empleado actualizar(@PathVariable Long id, @RequestBody Empleado empleado) {
+        empleado.setId(id);
+        return empleadoService.guardar(empleado);
+    }
 }

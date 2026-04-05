@@ -21,4 +21,9 @@ public class EmpleadoController {
     public java.util.List<Empleado> listar() {
         return empleadoService.listar();
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id) {
+        empleadoService.eliminar(id);
+    }
 }

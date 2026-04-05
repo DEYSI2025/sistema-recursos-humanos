@@ -14,4 +14,8 @@ public class EmpleadoService {
     public Empleado guardar(Empleado empleado) {
         return empleadoRepository.save(empleado);
     }
+    
+    public java.util.List<Empleado> listar() {
+    return empleadoRepository.findAll();
+    }
 }

@@ -18,4 +18,8 @@ public class EmpleadoService {
     public java.util.List<Empleado> listar() {
     return empleadoRepository.findAll();
     }
+    
+    public void eliminar(Long id) {
+    empleadoRepository.deleteById(id);
+    }
 }

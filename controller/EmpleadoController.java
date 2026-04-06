@@ -2,6 +2,7 @@ package com.empresa.recursoshumanos.controller;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 import com.empresa.recursoshumanos.entity.Empleado;
 import com.empresa.recursoshumanos.service.EmpleadoService;
 
@@ -18,18 +19,18 @@ public class EmpleadoController {
     }
 
     @GetMapping
-    public java.util.List<Empleado> listar() {
+    public List<Empleado> listar() {
         return empleadoService.listar();
-    }
-
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Long id) {
-        empleadoService.eliminar(id);
     }
 
     @PutMapping("/{id}")
     public Empleado actualizar(@PathVariable Long id, @RequestBody Empleado empleado) {
         empleado.setId(id);
         return empleadoService.guardar(empleado);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id) {
+        empleadoService.eliminar(id);
     }
 }

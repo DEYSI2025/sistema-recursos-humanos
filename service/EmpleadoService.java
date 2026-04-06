@@ -2,6 +2,7 @@ package com.empresa.recursoshumanos.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 import com.empresa.recursoshumanos.entity.Empleado;
 import com.empresa.recursoshumanos.repository.EmpleadoRepository;
 
@@ -14,12 +15,16 @@ public class EmpleadoService {
     public Empleado guardar(Empleado empleado) {
         return empleadoRepository.save(empleado);
     }
-    
-    public java.util.List<Empleado> listar() {
-    return empleadoRepository.findAll();
+
+    public List<Empleado> listar() {
+        return empleadoRepository.findAll();
     }
-    
+
     public void eliminar(Long id) {
-    empleadoRepository.deleteById(id);
+        empleadoRepository.deleteById(id);
+    }
+
+    public Empleado buscarPorDni(String dni) {
+        return empleadoRepository.findByDni(dni);
     }
 }
